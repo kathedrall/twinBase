@@ -7,7 +7,7 @@ import (
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/kathedrall/mysql-twin-backup/internal/config"
+	"github.com/kathedrall/twinBase/internal/config"
 )
 
 type Manager struct {

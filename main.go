@@ -7,10 +7,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kathedrall/mysql-twin-backup/internal/config"
-	"github.com/kathedrall/mysql-twin-backup/internal/database"
-	"github.com/kathedrall/mysql-twin-backup/internal/models"
-	"github.com/kathedrall/mysql-twin-backup/internal/services"
+	"github.com/kathedrall/twinBase/internal/config"
+	"github.com/kathedrall/twinBase/internal/database"
+	"github.com/kathedrall/twinBase/internal/models"
+	"github.com/kathedrall/twinBase/internal/services"
 )
 
 func main() {
@@ -104,7 +104,7 @@ func main() {
 }
 
 func printUsage() {
-	fmt.Println("Usage: mysql-twin-backup <command> [options] [target]")
+	fmt.Println("Usage: twinBase <command> [options] [target]")
 	fmt.Println()
 	fmt.Println("Commands:")
 	fmt.Println("  discover              - Discover schemas and tables from source database")

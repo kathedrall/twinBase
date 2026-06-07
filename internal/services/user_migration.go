@@ -6,7 +6,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/kathedrall/mysql-twin-backup/internal/models"
+	"github.com/kathedrall/twinBase/internal/models"
 )
 
 type UserMigrationService struct {
