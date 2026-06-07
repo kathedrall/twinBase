@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # MySQL Source Database (database that will be backed up)
+  mysql-source:
+    image: mysql:8.0
+    container_name: mysql-source
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: source_db
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_source_data:/var/lib/mysql
+      - ./docker/mysql-source/init:/docker-entrypoint-initdb.d
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - mysql-network
+
+  # MySQL Destination Database (database that will receive the backup)
+  mysql-dest:
+    image: mysql:8.0
+    container_name: mysql-dest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: dest_db
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_dest_data:/var/lib/mysql
+      - ./docker/mysql-dest/init:/docker-entrypoint-initdb.d
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - mysql-network
+
+  # phpMyAdmin for source database
+  phpmyadmin-source:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-source
+    restart: always
+    environment:
+      PMA_HOST: mysql-source
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root123
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql-source
+    networks:
+      - mysql-network
+
+  # phpMyAdmin for destination database
+  phpmyadmin-dest:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-dest
+    restart: always
+    environment:
+      PMA_HOST: mysql-dest
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root123
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql-dest
+    networks:
+      - mysql-network
+
+volumes:
+  mysql_source_data:
+  mysql_dest_data:
+
+networks:
+  mysql-network:
+    driver: bridge

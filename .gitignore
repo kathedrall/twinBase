@@ -1,0 +1,48 @@
+# Binários
+twinBase
+twinBase.exe
+bin/
+
+# Arquivos de configuração local
+.env
+
+# Logs e dados temporários
+*.log
+migration_checkpoint.json
+migration_checkpoint.json.bak
+
+# Go específico
+# Vendor
+vendor/
+
+# Arquivos temporários do Go
+*.test
+*.out
+*.prof
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS específico
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+mysql-data/
+mysql-dest-data/
+
+# Backup files
+*.bak
+*.backup
+
+# Test coverage
+coverage.out
+coverage.html
+
+# Temporary files
+*.tmp
+*.temp
