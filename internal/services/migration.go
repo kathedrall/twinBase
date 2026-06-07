@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/kathedrall/mysql-twin-backup/internal/database"
-	"github.com/kathedrall/mysql-twin-backup/internal/models"
+	"github.com/kathedrall/twinBase/internal/database"
+	"github.com/kathedrall/twinBase/internal/models"
 )
 
 type TableJob struct {

@@ -179,7 +179,7 @@ Para facilitar os testes, o projeto inclui um ambiente de testes com dois contai
 
 ```bash
 
-mysql-twin-backup/
+twinBase/
 
 ├── main.go                    # CLI principal-  Sistema de checkpoint para recuperação
 
@@ -227,7 +227,7 @@ mysql-twin-backup/
 
       "processed_rows": 50000,
 
-      "last_id": 50000-  Privilégios por tabela./mysql-twin-backup discover
+      "last_id": 50000-  Privilégios por tabela./twinBase discover
 
     }
 
