@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/kathedrall/mysql-twin-backup/internal/models"
+	"github.com/kathedrall/twinBase/internal/models"
 )
 
 const checkpointFile = "migration_checkpoint.json"

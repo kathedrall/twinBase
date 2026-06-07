@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/kathedrall/mysql-twin-backup/internal/models"
+	"github.com/kathedrall/twinBase/internal/models"
 )
 
 type DiscoveryService struct {

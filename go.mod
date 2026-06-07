@@ -1,4 +1,4 @@
-module github.com/kathedrall/mysql-twin-backup
+module github.com/kathedrall/twinBase
 
 go 1.26.4
 
