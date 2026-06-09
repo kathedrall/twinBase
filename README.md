@@ -286,29 +286,11 @@ Invalid datetime → Valid datetime
 Isso criará:
 
 ---
-
 ###  **v0.0.2 (Próxima Release)**
 
-- [X] Migração de Triggers/Procedures
+- [] Suporte a migracao Cross Version Versao 5 para 8 e 8 para 5
 
-- [X] Suporte a PostgreSQL
-
-- [X] Compressão de dados ./twinBase full
-
-- [ ] Interface Web (UI)
-
-- [ ] API REST
-
-
-###  **v0.0.3 (Futuro)**### 
-
-- [ ] Suporte a Oracle/SQL Server
-
-- [ ] Suporte a Redis
-
-- [ ] Clustering e distribuição
-
-- [ ] Machine Learning para otimização
+- [] Migração de Triggers/Procedures
 
 
 ##  **Casos de Sucesso**
